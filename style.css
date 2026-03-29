@@ -1,0 +1,132 @@
+* { margin: 0; padding: 0; box-box: border-box; font-family: 'Helvetica', sans-serif; }
+body { background: #111; color: #fff; }
+
+.wrapper { max-width: 1200px; margin: 0 auto; padding: 20px; }
+header { 
+    padding: 20px 0 10px 0; /* Reduced top and bottom padding */
+    text-align: center; 
+    letter-spacing: 4px; 
+}
+
+/* The Mosaic Grid */
+.mosaic-container {
+    display: flex;
+    height: 70vh;
+    gap: 15px;
+}
+
+.main-feature {
+    flex: 2;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    border-radius: 8px;
+}
+
+.side-grid {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.side-photo {
+    flex: 1;
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+}
+
+/* Overlay & Button */
+.overlay {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+}
+
+/* Find or add this section in your style.css */
+.overlay h2 {
+    font-size: 1.8rem; /* Make it nice and big */
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #fff; /* The main color is white */
+    
+    /* THE MAGICAL BLACK CONTOUR (STROKE) */
+    -webkit-text-stroke: 1px #000; /* 2px black line around every letter */
+    text-stroke: 2px #000;         /* Modern browser support */
+    
+    /* EXTRA POP: A soft drop shadow makes it even clearer */
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.7); 
+    line-height: 1.1;
+}
+
+/* Make the text slightly smaller on mobile phones */
+@media (max-width: 768px) {
+    .overlay h2 {
+        font-size: 2rem;
+    }
+}
+
+.cta-button {
+    display: inline-block;
+    margin-top: 10px; /* Reduced to bring it even closer to the text */
+    padding: 15px 40px;
+    background: #fff;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 50px;
+    transition: transform 0.2s;
+}
+
+.cta-button:hover { transform: scale(1.05); }
+
+/* Mobile View */
+@media (max-width: 768px) {
+    .mosaic-container { flex-direction: column; height: auto; }
+    .main-feature { height: 400px; }
+    .side-grid { height: 400px; }
+}
+
+/* Styling for the new undertitle */
+.undertitle {
+    font-family: 'Great Vibes', cursive;
+    font-size: 1.6rem;
+    color: #fff;
+    text-transform: none;
+    margin-top: -5px; /* Pulls it tight under the logo */
+    margin-bottom: 15px; /* Reduced space before the mosaic */
+    opacity: 0.9;
+}
+
+/* Compact Footer */
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0; /* Very tight vertical padding */
+    font-size: 1rem;
+    color: #fff; /* Keeping your preferred bright white */
+    border-top: 1px solid #333;
+    margin-top: 10px; /* Pulls footer close to the mosaic */
+}
+
+footer .footer-right {
+    font-weight: normal; /* Makes the contact info stand out */
+}
+
+/* Quick fix for the Logo to ensure it stays centered */
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 0; /* Removed bottom margin */
+}
+
+/* Mobile fix for footer */
+@media (max-width: 768px) {
+    footer {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+}
