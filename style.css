@@ -31,6 +31,9 @@ header {
     display: flex;
     height: 70vh;
     gap: 15px;
+    /* Fade-in Animation Applied Here */
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in forwards;
 }
 
 .main-feature {
@@ -82,10 +85,15 @@ header {
     text-decoration: none;
     font-weight: bold;
     border-radius: 50px;
-    transition: transform 0.2s;
+    /* Transition updated to include the box-shadow for the glow */
+    transition: transform 0.2s, box-shadow 0.3s ease;
 }
 
-.cta-button:hover { transform: scale(1.05); }
+/* Updated Hover State with Glow */
+.cta-button:hover { 
+    transform: scale(1.05); 
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.6); /* This creates the white glow */
+}
 
 /* 4. Footer */
 footer {
@@ -111,24 +119,23 @@ footer .footer-right {
     }
 
     .main-feature { 
-        flex: none; /* BREAKS THE ZERO-HEIGHT LOOP */
-        min-height: 400px; /* Ensures the photo is always visible */
+        flex: none; 
+        min-height: 400px; 
         width: 100%;
     }
 
     .side-grid { 
-        flex: none; /* BREAKS THE ZERO-HEIGHT LOOP */
+        flex: none; 
         height: auto; 
         width: 100%;
     }
 
     .side-photo {
-        flex: none; /* BREAKS THE ZERO-HEIGHT LOOP */
-        min-height: 300px; /* Ensures the photo is always visible */
+        flex: none; 
+        min-height: 300px; 
         width: 100%;
     }
 
-    /* Centers the text and prevents it from overlapping the top logo */
     .overlay {
         position: absolute;
         bottom: 20px;
@@ -145,5 +152,17 @@ footer .footer-right {
         flex-direction: column;
         gap: 10px;
         text-align: center;
+    }
+}
+
+/* Fade-in Animation Keyframes */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
